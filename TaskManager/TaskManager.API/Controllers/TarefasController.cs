@@ -3,8 +3,6 @@ using TaskManager.API.Data.Repositories;
 using TaskManager.API.Models;
 using TaskManager.API.Models.InputModels;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace TaskManager.API.Controllers
 {
     [Route("api/[controller]")]
@@ -18,8 +16,7 @@ namespace TaskManager.API.Controllers
             _tarefasRepository = tarefasRepository;
         }
 
-
-        // GET: api/tarefas
+        //GET: api/tarefas
         [HttpGet]
         public IActionResult Get()
         {
@@ -27,7 +24,7 @@ namespace TaskManager.API.Controllers
             return Ok(tarefas);
         }
 
-        // GET api/tarefas/{id}
+        //GET api/tarefas/{id}
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
@@ -39,7 +36,7 @@ namespace TaskManager.API.Controllers
             return Ok(tarefa);
         }
 
-        // POST api/tarefas
+        //POST api/tarefas
         [HttpPost]
         public IActionResult Post([FromBody] TarefaInputModel novaTarefa)
         {
@@ -50,7 +47,7 @@ namespace TaskManager.API.Controllers
             return Created("", tarefa);
         }
 
-        // PUT api/tarefas/{id}
+        //PUT api/tarefas/{id}
         [HttpPut("{id}")]
         public IActionResult Put(string id, [FromBody] TarefaInputModel tarefaAtualizada)
         {
@@ -66,7 +63,7 @@ namespace TaskManager.API.Controllers
             return Ok(tarefa);
         }
 
-        // DELETE api/tarefas/{id}
+        //DELETE api/tarefas/{id}
         [HttpDelete("{id}")]
         public IActionResult Delete(string id)
         {
